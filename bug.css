@@ -1,0 +1,14 @@
+The following CSS code snippet demonstrates an uncommon error that can lead to unexpected layout issues:
+
+```css
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+div > * {
+  width: 100px;
+}
+```
+
+This code intends to distribute three or more child elements evenly across a flex container. However, if a child element has `width: 100px` and the parent is less than 300px wide then there will be an overflow.  `justify-content: space-between` distributes space between items, but if the total width of the items plus the space between them exceeds the container width, items will overflow.
