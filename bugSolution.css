@@ -1,0 +1,15 @@
+The following CSS resolves the overflow issue by allowing the child elements to shrink:
+
+```css
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+div > * {
+  width: 100px;
+  flex-shrink: 1;
+}
+```
+
+Adding `flex-shrink: 1;` ensures that if the total width of the elements exceeds the container's width, the elements will shrink proportionally to fit within the available space.
